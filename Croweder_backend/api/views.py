@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Startup
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.forms.models import model_to_dict
 # Create your views here.
 @csrf_exempt
 def register_startup(request):
@@ -14,7 +15,8 @@ def register_startup(request):
                 startup_description=request.POST.get('startup_description'),
                 intro_video=request.POST.get('intro_video'),
                 website=request.POST.get('website'),
-                pitch_deck=request.FILES.get('pitch_deck')  # from uploaded file
+                pitch_deck=request.FILES.get('pitch_deck'),
+                funded = request.POST.get('funded')  # from uploaded file
             )
             startup.save()
             return JsonResponse({'message': "Startup registered successfully"}, status=200)
@@ -24,7 +26,7 @@ def register_startup(request):
 
 def list_startups(request):
     if request.method == "GET":
-        startups = Startup.objects.filter(email = "test1@gmail.com")
+        startups = Startup.objects.all()
         data = []
 
         for startup in startups:
@@ -42,3 +44,17 @@ def list_startups(request):
         return JsonResponse({"startups": data}, status=200)
     
     return JsonResponse({"message": "Only GET method allowed"}, status=405)
+def get_latest(request):
+    if request.method == "GET":
+        startup = Startup.objects.last()
+        if startup is None:
+            return JsonResponse({"startup": None}, status=200)
+        
+        startup_dict = model_to_dict(startup)
+        if startup.pitch_deck:
+            startup_dict['pitch_deck'] = startup.pitch_deck.url
+        else:
+            startup_dict['pitch_deck'] = None
+
+        return JsonResponse({"startup": startup_dict}, status=200)
+    return JsonResponse({"error": "It should be a GET request"}, status=400)

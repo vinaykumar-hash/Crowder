@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 urlpatterns = [
-    path('register/',views.register_startup,name="register"),
-    path('regs',views.list_startups,name="Listing all")
+    path('register',views.register_startup,name="register"),
+    path('regs',views.list_startups,name="Listing all"),
+    path('latest',views.get_latest,name="latestAdded")
 ]
