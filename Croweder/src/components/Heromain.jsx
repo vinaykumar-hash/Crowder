@@ -57,9 +57,8 @@ const Heromain = () => {
   }
 
   return (
-    <div className='w-full h-full overflow-hidden p-4 rounded-xl'>
+    <div className='w-full h-full overflow-hidden'>
       <iframe
-        style={{borderRadius:"20px"}}
         width="100%"
         height="100%"
         src={youtubeEmbedUrl}

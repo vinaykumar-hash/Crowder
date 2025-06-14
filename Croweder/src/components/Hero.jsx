@@ -13,9 +13,9 @@ const Hero = () => {
             <div className='h-40 w-80 bg-black/0 rounded-xl'>
               <SmallHero videoIndex={1} />
             </div>
-            <div className='h-40 w-80 bg-black/0 rounded-xl'></div>
-            <div className='h-40 w-80 bg-black/10 rounded-xl'></div>
-            <div className='h-40 w-80 bg-black/10 rounded-xl'></div>
+            <div className='h-40 w-80 bg-black/0 rounded-xl'><SmallHero videoIndex={2} /></div>
+            <div className='h-40 w-80 bg-black/10 rounded-xl'><SmallHero videoIndex={3} /></div>
+            <div className='h-40 w-80 bg-black/10 rounded-xl'><SmallHero videoIndex={4} /></div>
         </div>
     </div>
   )
