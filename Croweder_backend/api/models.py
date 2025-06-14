@@ -11,5 +11,6 @@ class Startup(models.Model):
     # registered_on = models.DateTimeField(auto_now_add=True)
     pitch_deck = models.FileField(upload_to='pitch/', blank=True, null=True)
     funded = models.DecimalField(blank=True, decimal_places=3,max_digits=10)
+    cover = models.URLField()
     
 

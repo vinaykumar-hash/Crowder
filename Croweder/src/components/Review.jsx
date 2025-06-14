@@ -14,6 +14,7 @@ const Review = ({ formData }) => {
         payload.append('website', formData.Website);
         payload.append('pitch_deck', formData.Pitch);
         payload.append('funded',0);
+        payload.append('cover',formData.Cover);
         setForm(payload);
     }
     async function setForm(payload){

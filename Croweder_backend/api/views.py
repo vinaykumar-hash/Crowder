@@ -16,7 +16,8 @@ def register_startup(request):
                 intro_video=request.POST.get('intro_video'),
                 website=request.POST.get('website'),
                 pitch_deck=request.FILES.get('pitch_deck'),
-                funded = request.POST.get('funded')  # from uploaded file
+                funded = request.POST.get('funded'),  # from uploaded file
+                cover = request.POST.get('cover')
             )
             startup.save()
             return JsonResponse({'message': "Startup registered successfully"}, status=200)

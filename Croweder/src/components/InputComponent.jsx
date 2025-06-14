@@ -11,6 +11,7 @@ const InputComponent = () => {
         Intro:'',
         Description:'',
         Pitch:'',
+        Cover:''
     })
     function textChange(event){
         const { name, value } = event.target;
@@ -37,9 +38,9 @@ const InputComponent = () => {
             <p className='font-semibold text-xl'>Email <span className='text-red-400'>*</span> :</p>
             <input name='email' value={FormData.email} onChange={textChange} type="text" placeholder='Enter email' className='text-xl px-4 py-2 outline-none rounded-xl underline underline-offset-4 flex-1' />
         </div>
-        <div className='fustat w-full flex justify-start items-center gap-2 opacity-0'>
-            <p className='font-semibold text-xl'>Email <span className='text-red-400'>*</span> :</p>
-            <input type="text" placeholder='Enter email' className='text-xl px-4 py-2 outline-none rounded-xl underline underline-offset-4 flex-1' />
+        <div className='fustat w-full flex justify-start items-center gap-2'>
+            <p className='font-semibold text-xl'>Cover'url' <span className='text-red-400'>*</span> :</p>
+            <input name='Cover' value={FormData.Cover} onChange={textChange} type="text" placeholder='Enter email' className='text-xl px-4 py-2 outline-none rounded-xl underline underline-offset-4 flex-1' />
         </div>
         </div>
         <div className='flex justify-start items-center w-full pt-4'>
