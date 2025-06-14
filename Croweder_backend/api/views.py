@@ -58,3 +58,9 @@ def get_latest(request):
 
         return JsonResponse({"startup": startup_dict}, status=200)
     return JsonResponse({"error": "It should be a GET request"}, status=400)
+def get_last_5_records(request):
+    if request.method == "GET":
+        last_5 = Startup.objects.order_by('-id')[:5]  # Assumes 'id' is auto-incremented
+        data = list(last_5.values())  # Convert queryset to list of dicts
+        return JsonResponse({"startups": data}, status=200)
+    return JsonResponse({"error": "Only GET method allowed"}, status=400)
