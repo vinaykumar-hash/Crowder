@@ -3,7 +3,7 @@ import Heromain from './Heromain'
 import SmallHero from './Smallhero'
 const Hero = () => {
   return (
-    <div className='w-full h-lvh flex justify-start items-center flex-col gap-4'>
+    <div className='w-full h-lvh flex justify-start items-center flex-col '>
         <div className='w-full' style={{backgroundColor:"#537D5D"}}></div>
         <div className=' bg-black/0' style={{height:"80%",width:"100%"}}>
           <Heromain/>
