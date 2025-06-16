@@ -40,7 +40,7 @@ const Home = () => {
         />
       </div>
       <Hero />
-      <div className='fustat flex justify-start items-start w-full px-40 h-screen pt-20'>
+      <div className='fustat flex justify-center items-start w-full px-40 h-screen pt-20 tracking-tight font-bold'>
         <TrueFocus 
 
           sentence="Find the Future"

@@ -8,7 +8,7 @@ const Hero = () => {
         <div className=' bg-black/0' style={{height:"80%",width:"100%"}}>
           <Heromain/>
         </div>
-        <p className='fustat text-2xl '>Our Favourate's</p>
+        <p className='fustat text-2xl py-4 font-semibold tracking-tight'>Our Favourate's</p>
         <div className='flex justify-start items-center gap-4'>
             <div className='h-40 w-80 bg-black/0 rounded-xl'>
               <SmallHero videoIndex={1} />
