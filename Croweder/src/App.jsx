@@ -5,6 +5,7 @@ import Signup from './components/Signup';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Createnew from './pages/Createnew';
+import Product from './pages/Product';
 const App = () => {
   return (
     <Router>
@@ -12,6 +13,7 @@ const App = () => {
         <Route path='/' element = {<Home/>}/>
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/create' element={<Createnew/>}></Route>
+        <Route path='/product/:id' element={<Product/>}></Route>
       </Routes>
     </Router>
   )
